@@ -1,1 +1,1 @@
-angular.module('scotchTodo', ['todoController', 'todoService', 'jobsService']);
+angular.module('personal-website', ['mainController', 'jobsService', 'projectsService']);
