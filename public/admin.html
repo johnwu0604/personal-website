@@ -15,6 +15,8 @@
     <script src="js/controllers/adminController.js"></script> <!-- load up our controller -->
     <script src="js/services/jobService.js"></script> <!-- load our job service -->
     <script src="js/services/projectService.js"></script> <!-- load our job service -->
+    <script src="js/services/languageService.js"></script> <!-- load our job service -->
+    <script src="js/services/frameworkService.js"></script> <!-- load our job service -->
     <script src="js/core.js"></script> <!-- load our main application -->
 
 </head>
@@ -35,13 +37,61 @@
         </div>
         <h3>Add a job: </h3>
         <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="Position" ng-model="formData.position">
-            <input type="text" class="form-control input-lg text-center" placeholder="Company" ng-model="formData.company">
-            <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="formData.description">
-            <input type="text" class="form-control input-lg text-center" placeholder="Start" ng-model="formData.start">
-            <input type="text" class="form-control input-lg text-center" placeholder="End" ng-model="formData.end">
+            <input type="text" class="form-control input-lg text-center" placeholder="Position" ng-model="jobsFormData.position">
+            <input type="text" class="form-control input-lg text-center" placeholder="Company" ng-model="jobsFormData.company">
+            <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="jobsFormData.description">
+            <input type="text" class="form-control input-lg text-center" placeholder="Start" ng-model="jobsFormData.start">
+            <input type="text" class="form-control input-lg text-center" placeholder="End" ng-model="jobsFormData.end">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addJob()">Add</button>
+    </section>
+
+    <section id="projects">
+        <h2><u>My Projects</u></h2>
+        <h4>Current Projects</h4>
+        <div class="project-list" ng-repeat="project in projects">
+            <p>{{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }}</p>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteProject(project._id)">Delete</button>
+        </div>
+        <h3>Add a project: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="projectsFormData.name">
+            <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="projectsFormData.description">
+            <input type="text" class="form-control input-lg text-center" placeholder="Time" ng-model="projectsFormData.time">
+            <input type="text" class="form-control input-lg text-center" placeholder="Photo URL" ng-model="projectsFormData.photo">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="addProject()">Add</button>
+    </section>
+
+    <section id="languages">
+        <h2><u>My Languages</u></h2>
+        <h4>Current Languages</h4>
+        <div class="language-list" ng-repeat="language in languages">
+            <p>{{ language.name }} - {{ language.strength }}</p>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteLanguage(language._id)">Delete</button>
+        </div>
+        <h3>Add a language: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="languagesFormData.name">
+            <input type="text" class="form-control input-lg text-center" placeholder="Strength" ng-model="languagesFormData.strength">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="addLanguage()">Add</button>
+    </section>
+
+
+    <section id="frameworks">
+        <h2><u>My Frameworks</u></h2>
+        <h4>Current Frameworks</h4>
+        <div class="framework-list" ng-repeat="framework in frameworks">
+            <p>{{ framework.name }} - {{ framework.photo }}</p>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteFramework(framework._id)">Delete</button>
+        </div>
+        <h3>Add a framework: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="frameworksFormData.name">
+            <input type="text" class="form-control input-lg text-center" placeholder="Photo" ng-model="frameworksFormData.photo">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="addFramework()">Add</button>
     </section>
 
 </div>

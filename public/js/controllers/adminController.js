@@ -1,8 +1,10 @@
 angular.module('mainController', [])
 
-    .controller('adminController', ['$scope','$http','Jobs', 'Projects', function($scope, $http, Jobs, Projects) {
+    .controller('adminController', ['$scope','$http','Jobs', 'Projects', 'Languages', 'Frameworks', function($scope, $http, Jobs, Projects, Languages, Frameworks) {
 
-        $scope.formData = {};
+        // Jobs =================================================================
+
+        $scope.jobsFormData = {};
         $scope.loading = true;
 
         // Load all the jobs
@@ -13,11 +15,11 @@ angular.module('mainController', [])
 
         // Add a job
         $scope.addJob = function() {
-            if ($scope.formData != undefined) {
+            if ($scope.jobsFormData != undefined) {
                 $scope.loading = true;
-                Jobs.create($scope.formData).success(function(data) {
+                Jobs.create($scope.jobsFormData).success(function(data) {
                     $scope.loading = false;
-                    $scope.formData = {};
+                    $scope.jobsFormData = {};
                     $scope.jobs = data;
                 });
             }
@@ -28,9 +30,107 @@ angular.module('mainController', [])
             $scope.loading = true;
             Jobs.delete(id).success(function(data) {
                 $scope.loading = false;
-                $scope.jobs = data; // assign our new list of todos
+                $scope.jobs = data;
             });
         };
+
+        // Projects =================================================================
+
+        $scope.projectsFormData = {};
+        $scope.loading = true;
+
+        // Load all the projects
+        Projects.get().success(function(data) {
+            $scope.projects = data;
+            $scope.loading = false;
+        });
+
+        // Add a project
+        $scope.addProject = function() {
+            if ($scope.projectsFormData != undefined) {
+                $scope.loading = true;
+                Projects.create($scope.projectsFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.projectsFormData = {};
+                    $scope.projects = data;
+                });
+            }
+        };
+
+        // Delete a project
+        $scope.deleteProject = function(id) {
+            $scope.loading = true;
+            Projects.delete(id).success(function(data) {
+                $scope.loading = false;
+                $scope.projects = data;
+            });
+        };
+
+        // Languages =================================================================
+
+        $scope.languagesFormData = {};
+        $scope.loading = true;
+
+        // Load all the languages
+        Languages.get().success(function(data) {
+            $scope.languages = data;
+            $scope.loading = false;
+        });
+
+        // Add a language
+        $scope.addLanguage = function() {
+            if ($scope.languagesFormData != undefined) {
+                $scope.loading = true;
+                Languages.create($scope.languagesFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.languagesFormData = {};
+                    $scope.languages = data;
+                });
+            }
+        };
+
+        // Delete a language
+        $scope.deleteLanguage = function(id) {
+            $scope.loading = true;
+            Languages.delete(id).success(function(data) {
+                $scope.loading = false;
+                $scope.languages = data;
+            });
+        };
+
+
+        // Frameworks =================================================================
+
+        $scope.frameworksFormData = {};
+        $scope.loading = true;
+
+        // Load all the frameworks
+        Frameworks.get().success(function(data) {
+            $scope.frameworks = data;
+            $scope.loading = false;
+        });
+
+        // Add a framework
+        $scope.addFramework = function() {
+            if ($scope.frameworksFormData != undefined) {
+                $scope.loading = true;
+                Frameworks.create($scope.frameworksFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.frameworksFormData = {};
+                    $scope.frameworks = data;
+                });
+            }
+        };
+
+        // Delete a framework
+        $scope.deleteFramework = function(id) {
+            $scope.loading = true;
+            Frameworks.delete(id).success(function(data) {
+                $scope.loading = false;
+                $scope.frameworks = data;
+            });
+        };
+
 
     }]);
 

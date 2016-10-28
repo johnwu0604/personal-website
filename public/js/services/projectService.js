@@ -6,7 +6,7 @@ angular.module('projectsService', []).factory('Projects', ['$http',function($htt
         get : function() {
             return $http.get('/api/projects');
         },
-        create : function(jobsData) {
+        create : function(projectsData) {
             return $http.post('/api/projects', projectsData);
         },
         delete : function(id) {

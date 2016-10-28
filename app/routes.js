@@ -1,5 +1,7 @@
 var Job = require('./models/job');
 var Project = require('./models/project');
+var Language = require('./models/language');
+var Framework = require('./models/framework');
 
 module.exports = function (app) {
 
@@ -100,6 +102,101 @@ module.exports = function (app) {
                     res.send(err);
                 }
                 res.json(projects);
+            });
+        });
+    });
+
+    // Language api ----------------------------------------------------------------
+
+    // get all languages
+    app.get('/api/languages', function (req, res) {
+        Language.find(function (err, languages) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(languages);
+        });
+    });
+
+    // add a language
+    app.post('/api/languages', function (req, res) {
+        Language.create({
+            name: req.body.name,
+            strength: req.body.strength,
+            done: false
+        }, function (err) {
+            if (err)
+                res.send(err);
+            Language.find(function (err, languages) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(languages);
+            });
+        });
+    });
+
+
+    // delete a language
+    app.delete('/api/languages/:language_id', function (req, res) {
+        Language.remove({
+            _id: req.params.language_id
+        }, function (err) {
+            if (err)
+                res.send(err);
+            Language.find(function (err, languages) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(languages);
+            });
+        });
+    });
+
+
+    // Framework api ----------------------------------------------------------------
+
+    // get all frameworks
+    app.get('/api/frameworks', function (req, res) {
+        Framework.find(function (err, frameworks) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(frameworks);
+        });
+    });
+
+    // add a framework
+    app.post('/api/frameworks', function (req, res) {
+        Framework.create({
+            name: req.body.name,
+            photo: req.body.photo,
+            done: false
+        }, function (err) {
+            if (err)
+                res.send(err);
+            Framework.find(function (err, frameworks) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(frameworks);
+            });
+        });
+    });
+
+
+    // delete a framework
+    app.delete('/api/frameworks/:framework_id', function (req, res) {
+        Framework.remove({
+            _id: req.params.framework_id
+        }, function (err) {
+            if (err)
+                res.send(err);
+            Framework.find(function (err, frameworks) {
+                if (err) {
+                    res.send(err);
+                }
+                res.json(frameworks);
             });
         });
     });
