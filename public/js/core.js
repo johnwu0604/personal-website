@@ -1,3 +1,1 @@
-angular.module('scotchTodo', ['todoController', 'todoService']);
-
-angular.module('jobs', ['jobsController', 'jobsService']);
+angular.module('scotchTodo', ['todoController', 'todoService', 'jobsService']);

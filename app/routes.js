@@ -67,7 +67,7 @@ module.exports = function (app) {
 
     // get all jobs
     app.get('/api/jobs', function (req, res) {
-        Job.find(function (err) {
+        Job.find(function (err, jobs) {
             if (err) {
                 res.send(err);
             }
@@ -98,7 +98,7 @@ module.exports = function (app) {
 
 
     // delete a job
-    app.delete('/api/jobs/:todo_id', function (req, res) {
+    app.delete('/api/jobs/:job_id', function (req, res) {
         Job.remove({
             _id: req.params.job_id
         }, function (err) {
@@ -108,7 +108,7 @@ module.exports = function (app) {
                 if (err) {
                     res.send(err);
                 }
-                res.json(jobs); // return all todos in JSON format
+                res.json(jobs);
             });
         });
     });

@@ -3,7 +3,7 @@ angular.module('jobsService', []).factory('Jobs', ['$http',function($http) {
         get : function() {
             return $http.get('/api/jobs');
         },
-        create : function(todoData) {
+        create : function(jobsData) {
             return $http.post('/api/jobs', jobsData);
         },
         delete : function(id) {
