@@ -23,6 +23,8 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
+// bootstrap ----------------------------------------------------------------
+app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'));
 
 // routes ======================================================================
 require('./app/routes.js')(app);
