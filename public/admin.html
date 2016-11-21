@@ -21,7 +21,7 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="adminController">
+<body ng-controller="controller">
 <div class="container">
 
     <div class="jumbotron text-center">
@@ -32,7 +32,7 @@
         <h2><u>My Jobs</u></h2>
         <h4>Current Jobs</h4>
         <div class="job-list" ng-repeat="job in jobs">
-            <p>{{ job.position }} at {{ job.company }} - {{ job.description }} - {{ job.start }} to {{ job.end }}</p>
+            <p>{{ job.position }} at {{ job.company }} - {{ job.description }} - {{ job.start }} to {{ job.end }} - {{ job.logo }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteJob(job._id)">Delete</button>
         </div>
         <h3>Add a job: </h3>
@@ -42,6 +42,7 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="jobsFormData.description">
             <input type="text" class="form-control input-lg text-center" placeholder="Start" ng-model="jobsFormData.start">
             <input type="text" class="form-control input-lg text-center" placeholder="End" ng-model="jobsFormData.end">
+            <input type="text" class="form-control input-lg text-center" placeholder="Logo" ng-model="jobsFormData.logo">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addJob()">Add</button>
     </section>

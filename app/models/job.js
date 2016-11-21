@@ -23,5 +23,9 @@ module.exports = mongoose.model('Job', {
     end: {
         type: String,
         default: ''
+    },
+    logo: {
+        type: String,
+        default: ''
     }
 });

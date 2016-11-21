@@ -25,6 +25,7 @@ module.exports = function (app) {
             description: req.body.description,
             start: req.body.start,
             end: req.body.end,
+            logo: req.body.logo,
             done: false
         }, function (err) {
             if (err)

@@ -1,6 +1,6 @@
 angular.module('mainController', [])
 
-    .controller('adminController', ['$scope','$http','Jobs', 'Projects', 'Languages', 'Frameworks', function($scope, $http, Jobs, Projects, Languages, Frameworks) {
+    .controller('controller', ['$scope','$http','Jobs', 'Projects', 'Languages', 'Frameworks', function($scope, $http, Jobs, Projects, Languages, Frameworks) {
 
         // Jobs =================================================================
 
