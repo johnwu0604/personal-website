@@ -14,7 +14,7 @@ body {
     color: #fed136;
 }
 p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.75;
 }
 p.large {
@@ -661,7 +661,7 @@ ul.social-buttons li a:active {
 }
 ::selection {
     text-shadow: none;
-    background: #222;
+    background: transparent;
 }
 img::selection {
     background: transparent;
@@ -733,3 +733,92 @@ body {
         width: 100%;
     }
 }
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url("../img/banner.png");
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.nav {
+    transition-duration: 1s;
+}
+
+.navbar-inverse {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 18px;
+    color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-nav > li > a.selected {
+    color: #fff;
+    background-color: transparent;
+    border-bottom: 3px solid #fff;
+    margin-bottom: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 10px 5px 10px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+
