@@ -101,11 +101,12 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>{{ job.company }} - {{ job.position }}</h4>
+                                <p class="text-muted"><em>{{ job.start }} - {{ job.end }}</em></p>
+                                <h4>{{ job.company }}</h4>
+                                <h4>{{ job.position }}</h4>
                             </div>
                             <div class="timeline-body">
                                 <p class="text-muted">{{ job.description }}</p>
-                                <p class="text-muted"><em>{{ job.start }} - {{ job.end }}</em></p>
                             </div>
                         </div>
                     </li>
