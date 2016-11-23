@@ -712,6 +712,22 @@ body {
     background-size: cover;
 }
 
+.skills-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background:
+        /* top, transparent red */
+            linear-gradient(
+                    rgba(0, 0, 0, 0.45),
+                    rgba(0, 0, 0, 0.45)
+            ),
+                /* bottom, image */
+            url('../img/skills-header.jpg');
+    background-size: cover;
+}
+
 .projects-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
