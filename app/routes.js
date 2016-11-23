@@ -77,6 +77,8 @@ module.exports = function (app) {
             description: req.body.description,
             time: req.body.time,
             photo: req.body.photo,
+            technologies: req.body.technologies,
+            code: req.body.code,
             done: false
         }, function (err) {
             if (err)

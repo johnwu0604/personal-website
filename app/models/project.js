@@ -20,5 +20,13 @@ module.exports = mongoose.model('Project', {
     photo: {
         type: String,
         default: ''
+    },
+    technologies: {
+        type: String,
+        default: ''
+    },
+    code: {
+        type: String,
+        default: ''
     }
 });

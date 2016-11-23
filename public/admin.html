@@ -51,7 +51,7 @@
         <h2><u>My Projects</u></h2>
         <h4>Current Projects</h4>
         <div class="project-list" ng-repeat="project in projects">
-            <p>{{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }}</p>
+            <p>{{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }} - {{ project.technologies }} - {{ project.code }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteProject(project._id)">Delete</button>
         </div>
         <h3>Add a project: </h3>
@@ -60,6 +60,8 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="projectsFormData.description">
             <input type="text" class="form-control input-lg text-center" placeholder="Time" ng-model="projectsFormData.time">
             <input type="text" class="form-control input-lg text-center" placeholder="Photo URL" ng-model="projectsFormData.photo">
+            <input type="text" class="form-control input-lg text-center" placeholder="Technologies" ng-model="projectsFormData.technologies">
+            <input type="text" class="form-control input-lg text-center" placeholder="Code" ng-model="projectsFormData.code">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addProject()">Add</button>
     </section>
