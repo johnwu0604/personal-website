@@ -30,5 +30,5 @@ app.use('/scripts', express.static(__dirname + '/node_modules/bootstrap/dist/'))
 require('./app/routes.js')(app);
 
 // listen (start app with node server.js) ======================================
-app.listen(5000);
-console.log("App listing on port 5000");
+app.listen(port);
+console.log("App listing on port " + port);
