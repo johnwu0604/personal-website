@@ -1,4 +1,4 @@
-<?php header('Access-Control-Allow-Origin: http://www.john-wu.me');
+<?php header('Access-Control-Allow-Origin: *');
 // Check for empty fields
 if(empty($_POST['name'])      ||
    empty($_POST['email'])     ||
