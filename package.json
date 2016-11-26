@@ -1,15 +1,16 @@
 {
-	"name" : "john-wu",
-	"version" : "0.0.0",
-	"description" : "Personal website",
-	"main" : "server.js",
-	"author" : "John Wu",
-	"dependencies": {
-		"body-parser" : "^1.4.3",
-		"express" : "^4.13.4",
-		"method-override": "^2.1.3",
-		"mongoose" : "^4.4.12",
-		"morgan" : "^1.1.1",
-		"bootstrap": "^3.3.7"
-	}
+  "name": "john-wu",
+  "version": "0.0.0",
+  "description": "Personal website",
+  "main": "server.js",
+  "author": "John Wu",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "bootstrap": "^3.3.7",
+    "express": "^4.13.4",
+    "method-override": "^2.1.3",
+    "mongoose": "^4.4.12",
+    "morgan": "^1.1.1",
+    "nodemailer": "^2.6.4"
+  }
 }

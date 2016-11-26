@@ -2,6 +2,8 @@ var Job = require('./models/job');
 var Project = require('./models/project');
 var Language = require('./models/language');
 var Framework = require('./models/framework');
+var Email = require('./models/email');
+var Nodemailer = require('nodemailer');
 
 module.exports = function (app) {
 
@@ -204,6 +206,42 @@ module.exports = function (app) {
         });
     });
 
+    // add a job
+    app.post('/email', function (req, res) {
+        var transporter = Nodemailer.createTransport({
+            host: "smtp.office365.com", // hostname
+            secure: false, // TLS requires secureConnection to be false
+            port: 587, // port for secure SMTP
+            tls: {
+                ciphers:'SSLv3'
+            },
+            auth: {
+                user: 'john.wu@mail.mcgill.ca',
+                pass: 'wutang10'
+            }
+        });
+
+
+        var mailOptions = {
+            from: '"' + req.body.name + '" <' + req.body.email + '>', // sender address
+            to: 'john.wu@mail.mcgill.ca', // list of receivers
+            subject: 'New email sent from john-wu.me', // Subject line
+            html: 'Email from: ' + req.body.name + '<br>'
+            + 'Phone Number: ' + req.body.number + '<br>'
+            + 'Message: ' + req.body.message
+        };
+
+        transporter.sendMail(mailOptions, function(error, info){
+            if(error){
+                console.log(error);
+                res.json({yo: 'error'});
+            }else{
+                console.log('Message sent: ' + info.response);
+                res.json({yo: info.response});
+            };
+        });
+
+    });
 
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {

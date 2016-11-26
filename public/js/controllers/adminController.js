@@ -1,6 +1,7 @@
 angular.module('mainController', [])
 
-    .controller('controller', ['$scope','$http','Jobs', 'Projects', 'Languages', 'Frameworks', function($scope, $http, Jobs, Projects, Languages, Frameworks) {
+    .controller('controller', ['$scope','$http','Jobs', 'Projects', 'Languages', 'Frameworks', 'Email',
+        function($scope, $http, Jobs, Projects, Languages, Frameworks, Email) {
 
         // Jobs =================================================================
 
@@ -129,6 +130,23 @@ angular.module('mainController', [])
                 $scope.loading = false;
                 $scope.frameworks = data;
             });
+        };
+
+        // Email =================================================================
+
+        $scope.emailFormData = {};
+        $scope.loading = true;
+
+        // Add a job
+        $scope.sendEmail = function() {
+            if ($scope.emailFormData != undefined) {
+                $scope.loading = true;
+                Email.create($scope.emailFormData).success(function(data) {
+                   $scope.loading = false;
+                   $scope.emailFormData = {};
+                   $scope.email = data;
+                });
+            }
         };
 
 
