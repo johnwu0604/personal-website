@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fadf4663-4c97-48a0-8076-d267368da311" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/contact_me.js" afterPath="$PROJECT_DIR$/public/js/contact_me.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mail/contact_me.php" afterPath="$PROJECT_DIR$/public/mail/contact_me.php" />
     </list>
     <ignored path="Personal-Website.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact_me.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contact_me.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/mail/contact_me.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact_me.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contact_me.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/contact_me.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            <state relative-caret-position="45">
+              <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
               <folding>
                 <marker date="1480118948000" expanded="true" signature="1487:1494" ph="×" />
                 <marker date="1480118948000" expanded="true" signature="2165:2172" ph="×" />
@@ -134,7 +134,6 @@
         <option value="$PROJECT_DIR$/public/js/agency.js" />
         <option value="$PROJECT_DIR$/public/js/controllers/adminController.js" />
         <option value="$PROJECT_DIR$/app/models/job.js" />
-        <option value="$PROJECT_DIR$/public/mail/contact_me.php" />
         <option value="$PROJECT_DIR$/app/models/project.js" />
         <option value="$PROJECT_DIR$/public/admin.html" />
         <option value="$PROJECT_DIR$/public/css/skills.html" />
@@ -147,6 +146,7 @@
         <option value="$PROJECT_DIR$/public/skills.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/contact_me.js" />
+        <option value="$PROJECT_DIR$/public/mail/contact_me.php" />
       </list>
     </option>
   </component>
@@ -904,12 +904,12 @@
       <workItem from="1478577351064" duration="1141000" />
       <workItem from="1478580834917" duration="7414000" />
       <workItem from="1479346853974" duration="1637000" />
-      <workItem from="1479605840124" duration="50359000" />
+      <workItem from="1479605840124" duration="50450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79384000" />
+    <option name="totallyTimeSpent" value="79475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="23" width="1440" height="796" extended-state="0" />
@@ -1304,14 +1304,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mail/contact_me.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jqBootstrapValidation.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13259">
@@ -1330,12 +1322,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/contact_me.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="45">
+          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
           <folding>
             <marker date="1480118948000" expanded="true" signature="1487:1494" ph="×" />
             <marker date="1480118948000" expanded="true" signature="2165:2172" ph="×" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mail/contact_me.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
