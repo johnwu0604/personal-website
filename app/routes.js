@@ -208,27 +208,24 @@ module.exports = function (app) {
 
     // add a job
     app.post('/email', function (req, res) {
+
         var transporter = Nodemailer.createTransport({
-            host: "smtp.office365.com", // hostname
-            secure: false, // TLS requires secureConnection to be false
-            port: 587, // port for secure SMTP
-            tls: {
-                ciphers:'SSLv3'
-            },
+            service: 'gmail',
             auth: {
-                user: 'john.wu@mail.mcgill.ca',
-                pass: 'wutang10'
+                user: 'johnwudonotreply@gmail.com',
+                pass: 'johnwu123'
             }
         });
 
-
         var mailOptions = {
-            from: '"' + req.body.name + '" <' + req.body.email + '>', // sender address
+            from: '"' + req.body.name + '" <' + req.body.email + '>',
+            replyTo: '"' + req.body.name + '" <' + req.body.email + '>',
             to: 'john.wu@mail.mcgill.ca', // list of receivers
             subject: 'New email sent from john-wu.me', // Subject line
-            html: 'Email from: ' + req.body.name + '<br>'
-            + 'Phone Number: ' + req.body.number + '<br>'
-            + 'Message: ' + req.body.message
+            html: 'You have received a new email form john-wu.me. <br><br> From: ' + req.body.name + '<br><br>'
+            + 'Email: ' + req.body.email + '<br><br>'
+            + 'Subject: ' + req.body.subject + '<br><br>'
+            + req.body.message
         };
 
         transporter.sendMail(mailOptions, function(error, info){

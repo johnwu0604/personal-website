@@ -12,7 +12,7 @@ module.exports = mongoose.model('Email', {
         type: String,
         default: ''
     },
-    phone: {
+    subject: {
         type: String,
         default: ''
     },
