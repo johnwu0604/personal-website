@@ -110,14 +110,18 @@ fieldset[disabled] .btn-primary.active {
     font-size: 18px;
     padding: 20px 40px;
 }
-.btn-xl:hover,
+.btn-xl:hover {
+    color: white;
+    background-color: #ce8483;
+    border-color: #ce8483;
+}
 .btn-xl:focus,
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
     color: white;
-    background-color: #ce8483;
-    border-color: #ce8483;
+    background-color: #cc0000;
+    border-color: #cc0000;
 }
 .btn-xl:active,
 .btn-xl.active,
