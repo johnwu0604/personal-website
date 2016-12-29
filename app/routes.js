@@ -41,6 +41,31 @@ module.exports = function (app) {
         });
     });
 
+    // update a job
+    app.put('/api/jobs/:job_id', function (req, res) {
+        Job.findById(req.params.job_id, function (err, job) {
+            if (err)
+                res.send(err);
+            job.position = req.body.position;
+            job.company = req.body.company;
+            job.description = req.body.description;
+            job.start = req.body.start;
+            job.end = req.body.end;
+            job.logo = req.body.logo;
+
+            job.save(function(err) {
+                if (err)
+                    res.send(err);
+                Job.find(function (err, jobs) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    res.json(jobs);
+                });
+            });
+        });
+    });
+
 
     // delete a job
     app.delete('/api/jobs/:job_id', function (req, res) {
@@ -94,6 +119,31 @@ module.exports = function (app) {
         });
     });
 
+    // update a project
+    app.put('/api/projects/:project_id', function (req, res) {
+        Project.findById(req.params.project_id, function (err, project) {
+            if (err)
+                res.send(err);
+            project.name = req.body.name;
+            project.description = req.body.description;
+            project.time = req.body.time;
+            project.photo = req.body.photo;
+            project.technologies = req.body.technologies;
+            project.code = req.body.code;
+
+            project.save(function(err) {
+                if (err)
+                    res.send(err);
+                Project.find(function (err, projects) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    res.json(projects);
+                });
+            });
+        });
+    });
+
 
     // delete a project
     app.delete('/api/projects/:project_id', function (req, res) {
@@ -137,6 +187,27 @@ module.exports = function (app) {
                     res.send(err);
                 }
                 res.json(languages);
+            });
+        });
+    });
+
+    // update a languae
+    app.put('/api/languages/:language_id', function (req, res) {
+        Language.findById(req.params.language_id, function (err, language) {
+            if (err)
+                res.send(err);
+            language.name = req.body.name;
+            language.strength = req.body.strength
+
+            language.save(function(err) {
+                if (err)
+                    res.send(err);
+                Language.find(function (err, languages) {
+                    if (err) {
+                        res.send(err);
+                    }
+                    res.json(languages);
+                });
             });
         });
     });
