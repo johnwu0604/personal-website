@@ -9,6 +9,9 @@ angular.module('projectsService', []).factory('Projects', ['$http',function($htt
         create : function(projectsData) {
             return $http.post('/api/projects', projectsData);
         },
+        update : function(id, projectsData) {
+            return $http.put('/api/projects/' + id, projectsData);
+        },
         delete : function(id) {
             return $http.delete('/api/projects/' + id);
         }

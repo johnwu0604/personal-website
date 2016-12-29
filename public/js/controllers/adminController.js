@@ -5,6 +5,7 @@ angular.module('mainController', [])
 
         // Jobs =================================================================
 
+        $scope.jobsUpdateFormData = {};
         $scope.jobsFormData = {};
         $scope.loading = true;
 
@@ -26,6 +27,18 @@ angular.module('mainController', [])
             }
         };
 
+        // Update a job
+        $scope.updateJob = function(id) {
+            $scope.loading = true;
+            if ($scope.jobsUpdateFormData != undefined) {
+                Jobs.update(id, $scope.jobsUpdateFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.jobsUpdateFormData = {};
+                    $scope.jobs = data;
+                })
+            }
+        };
+
         // Delete a job
         $scope.deleteJob = function(id) {
             $scope.loading = true;
@@ -37,6 +50,7 @@ angular.module('mainController', [])
 
         // Projects =================================================================
 
+        $scope.projectsUpdateFormData = {};
         $scope.projectsFormData = {};
         $scope.loading = true;
 
@@ -58,6 +72,18 @@ angular.module('mainController', [])
             }
         };
 
+        // Update a project
+        $scope.updateProject = function(id) {
+            $scope.loading = true;
+            if ($scope.projectsUpdateFormData != undefined) {
+                Projects.update(id, $scope.projectsUpdateFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.projectsUpdateFormData = {};
+                    $scope.projects = data;
+                })
+            }
+        };
+
         // Delete a project
         $scope.deleteProject = function(id) {
             $scope.loading = true;
@@ -69,6 +95,7 @@ angular.module('mainController', [])
 
         // Languages =================================================================
 
+        $scope.languagesUpdateFormData = {};
         $scope.languagesFormData = {};
         $scope.loading = true;
 
@@ -89,6 +116,18 @@ angular.module('mainController', [])
                 });
             }
         };
+
+        // Update a language
+        $scope.updateLanguage = function(id) {
+            $scope.loading = true;
+            if ($scope.languagesUpdateFormData != undefined) {
+                Languages.update(id, $scope.languagesUpdateFormData).success(function(data) {
+                    $scope.loading = false;
+                    $scope.languagesUpdateFormData = {};
+                    $scope.languages = data;
+                })
+            }
+        }
 
         // Delete a language
         $scope.deleteLanguage = function(id) {

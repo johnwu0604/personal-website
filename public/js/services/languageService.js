@@ -9,6 +9,9 @@ angular.module('languagesService', []).factory('Languages', ['$http',function($h
         create : function(languagesData) {
             return $http.post('/api/languages', languagesData);
         },
+        update: function(id, languagesData) {
+            return $http.put('/api/languages/' + id, languagesData);
+        },
         delete : function(id) {
             return $http.delete('/api/languages/' + id);
         }

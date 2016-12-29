@@ -6,6 +6,9 @@ angular.module('jobsService', []).factory('Jobs', ['$http',function($http) {
         create : function(jobsData) {
             return $http.post('/api/jobs', jobsData);
         },
+        update : function(id, jobsData) {
+            return $http.put('/api/jobs/' + id, jobsData);
+        },
         delete : function(id) {
             return $http.delete('/api/jobs/' + id);
         }

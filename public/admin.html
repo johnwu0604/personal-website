@@ -33,7 +33,7 @@
         <h2><u>My Jobs</u></h2>
         <h4>Current Jobs</h4>
         <div class="job-list" ng-repeat="job in jobs">
-            <p>{{ job.position }} at {{ job.company }} - {{ job.description }} - {{ job.start }} to {{ job.end }} - {{ job.logo }}</p>
+            <p>{{ job._id }} - {{ job.position }} at {{ job.company }} - {{ job.description }} - {{ job.start }} to {{ job.end }} - {{ job.logo }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteJob(job._id)">Delete</button>
         </div>
         <h3>Add a job: </h3>
@@ -46,13 +46,24 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Logo" ng-model="jobsFormData.logo">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addJob()">Add</button>
+        <h3>Update a job: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="ID" ng-model="jobsUpdateFormData.id">
+            <input type="text" class="form-control input-lg text-center" placeholder="Position" ng-model="jobsUpdateFormData.position">
+            <input type="text" class="form-control input-lg text-center" placeholder="Company" ng-model="jobsUpdateFormData.company">
+            <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="jobsUpdateFormData.description">
+            <input type="text" class="form-control input-lg text-center" placeholder="Start" ng-model="jobsUpdateFormData.start">
+            <input type="text" class="form-control input-lg text-center" placeholder="End" ng-model="jobsUpdateFormData.end">
+            <input type="text" class="form-control input-lg text-center" placeholder="Logo" ng-model="jobsUpdateFormData.logo">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="updateJob(jobsUpdateFormData.id)">Update</button>
     </section>
 
     <section id="projects">
         <h2><u>My Projects</u></h2>
         <h4>Current Projects</h4>
         <div class="project-list" ng-repeat="project in projects">
-            <p>{{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }} - {{ project.technologies }} - {{ project.code }}</p>
+            <p>{{ project._id }} {{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }} - {{ project.technologies }} - {{ project.code }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteProject(project._id)">Delete</button>
         </div>
         <h3>Add a project: </h3>
@@ -65,12 +76,24 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Code" ng-model="projectsFormData.code">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addProject()">Add</button>
+        <h3>Update a project: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="ID" ng-model="projectsUpdateFormData.id">
+            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="projectsUpdateFormData.name">
+            <input type="text" class="form-control input-lg text-center" placeholder="Description" ng-model="projectsUpdateFormData.description">
+            <input type="text" class="form-control input-lg text-center" placeholder="Time" ng-model="projectsUpdateFormData.time">
+            <input type="text" class="form-control input-lg text-center" placeholder="Photo URL" ng-model="projectsUpdateFormData.photo">
+            <input type="text" class="form-control input-lg text-center" placeholder="Technologies" ng-model="projectsUpdateFormData.technologies">
+            <input type="text" class="form-control input-lg text-center" placeholder="Code" ng-model="projectsUpdateFormData.code">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="updateProject(projectsUpdateFormData.id)">Update</button>
     </section>
 
     <section id="languages">
         <h2><u>My Languages</u></h2>
         <h4>Current Languages</h4>
         <div class="language-list" ng-repeat="language in languages">
+            <p>id = {{ language._id }}</p>
             <p>{{ language.name }} - {{ language.strength }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteLanguage(language._id)">Delete</button>
         </div>
@@ -80,6 +103,13 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Strength" ng-model="languagesFormData.strength">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="addLanguage()">Add</button>
+        <h3>Update a language: </h3>
+        <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="ID" ng-model="languagesUpdateFormData.id">
+            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="languagesUpdateFormData.name">
+            <input type="text" class="form-control input-lg text-center" placeholder="Strength" ng-model="languagesUpdateFormData.strength">
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="updateLanguage(languagesUpdateFormData.id)">Update</button>
     </section>
 
 

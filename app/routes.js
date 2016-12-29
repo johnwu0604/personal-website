@@ -46,12 +46,26 @@ module.exports = function (app) {
         Job.findById(req.params.job_id, function (err, job) {
             if (err)
                 res.send(err);
-            job.position = req.body.position;
-            job.company = req.body.company;
-            job.description = req.body.description;
-            job.start = req.body.start;
-            job.end = req.body.end;
-            job.logo = req.body.logo;
+
+            if ( req.body.position != null ) {
+                job.position = req.body.position;
+            }
+            if ( req.body.company != null ) {
+                job.company = req.body.company;
+            }
+            if ( req.body.description != null ) {
+                job.description = req.body.description;
+            }
+            if ( req.body.start != null ) {
+                job.start = req.body.start;
+            }
+            if ( req.body.end != null ) {
+                job.end = req.body.end;
+            }
+            if ( req.body.logo != null ) {
+                job.logo = req.body.logo;
+            }
+
 
             job.save(function(err) {
                 if (err)
@@ -124,12 +138,24 @@ module.exports = function (app) {
         Project.findById(req.params.project_id, function (err, project) {
             if (err)
                 res.send(err);
-            project.name = req.body.name;
-            project.description = req.body.description;
-            project.time = req.body.time;
-            project.photo = req.body.photo;
-            project.technologies = req.body.technologies;
-            project.code = req.body.code;
+            if ( req.body.name != null ) {
+                project.name = req.body.name;
+            }
+            if ( req.body.description != null ) {
+                project.description = req.body.description;
+            }
+            if ( req.body.time != null ) {
+                project.time = req.body.time;
+            }
+            if ( req.body.photo != null ) {
+                project.photo = req.body.photo;
+            }
+            if ( req.body.technologies != null ) {
+                project.technologies = req.body.technologies;
+            }
+            if ( req.body.code != null ) {
+                project.code = req.body.code;
+            }
 
             project.save(function(err) {
                 if (err)
@@ -196,8 +222,12 @@ module.exports = function (app) {
         Language.findById(req.params.language_id, function (err, language) {
             if (err)
                 res.send(err);
-            language.name = req.body.name;
-            language.strength = req.body.strength
+            if (req.body.name != null) {
+                language.name = req.body.name;
+            }
+            if (req.body.strength != null) {
+                language.strength = req.body.strength;
+            }
 
             language.save(function(err) {
                 if (err)
