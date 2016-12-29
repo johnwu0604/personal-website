@@ -314,7 +314,7 @@ module.exports = function (app) {
             service: 'gmail',
             auth: {
                 user: 'johnwudonotreply@gmail.com',
-                pass: 'johnwu123'
+                pass: 'asdlkj123'
             }
         });
 
