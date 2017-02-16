@@ -33,7 +33,8 @@
         <h2><u>My Jobs</u></h2>
         <h4>Current Jobs</h4>
         <div class="job-list" ng-repeat="job in jobs">
-            <p>{{ job._id }} - {{ job.position }} at {{ job.company }} - {{ job.description }} - {{ job.start }} to {{ job.end }} - {{ job.logo }}</p>
+            <p>ID - {{ job._id }} <br>Position - {{ job.position }} <br>Company - {{ job.company }} <br>Description -  {{ job.description }}
+                <br>Start Date - {{ job.start }} <br>End Date- {{ job.end }} <br>Logo - {{ job.logo }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteJob(job._id)">Delete</button>
         </div>
         <h3>Add a job: </h3>
@@ -63,7 +64,7 @@
         <h2><u>My Projects</u></h2>
         <h4>Current Projects</h4>
         <div class="project-list" ng-repeat="project in projects">
-            <p>{{ project._id }} {{ project.name }} - {{ project.description }} - {{ project.time }} - {{ project.photo }} - {{ project.technologies }} - {{ project.code }}</p>
+            <p>ID - {{ project._id }} <br>Name - {{ project.name }} <br>Description - {{ project.description }} <br>Time - {{ project.time }} <br>Photo - {{ project.photo }} <br> Technologies - {{ project.technologies }} <br>Code - {{ project.code }}</p>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteProject(project._id)">Delete</button>
         </div>
         <h3>Add a project: </h3>
@@ -87,45 +88,6 @@
             <input type="text" class="form-control input-lg text-center" placeholder="Code" ng-model="projectsUpdateFormData.code">
         </div>
         <button type="submit" class="btn btn-primary btn-lg" ng-click="updateProject(projectsUpdateFormData.id)">Update</button>
-    </section>
-
-    <section id="languages">
-        <h2><u>My Languages</u></h2>
-        <h4>Current Languages</h4>
-        <div class="language-list" ng-repeat="language in languages">
-            <p>id = {{ language._id }}</p>
-            <p>{{ language.name }} - {{ language.strength }}</p>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteLanguage(language._id)">Delete</button>
-        </div>
-        <h3>Add a language: </h3>
-        <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="languagesFormData.name">
-            <input type="text" class="form-control input-lg text-center" placeholder="Strength" ng-model="languagesFormData.strength">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="addLanguage()">Add</button>
-        <h3>Update a language: </h3>
-        <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="ID" ng-model="languagesUpdateFormData.id">
-            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="languagesUpdateFormData.name">
-            <input type="text" class="form-control input-lg text-center" placeholder="Strength" ng-model="languagesUpdateFormData.strength">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="updateLanguage(languagesUpdateFormData.id)">Update</button>
-    </section>
-
-
-    <section id="frameworks">
-        <h2><u>My Frameworks</u></h2>
-        <h4>Current Frameworks</h4>
-        <div class="framework-list" ng-repeat="framework in frameworks">
-            <p>{{ framework.name }} - {{ framework.photo }}</p>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="deleteFramework(framework._id)">Delete</button>
-        </div>
-        <h3>Add a framework: </h3>
-        <div class="form-group">
-            <input type="text" class="form-control input-lg text-center" placeholder="Name" ng-model="frameworksFormData.name">
-            <input type="text" class="form-control input-lg text-center" placeholder="Photo" ng-model="frameworksFormData.photo">
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="addFramework()">Add</button>
     </section>
 
 </div>
