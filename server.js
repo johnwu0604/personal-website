@@ -32,3 +32,9 @@ require('./app/routes.js')(app);
 // listen (start app with node server.js) ======================================
 app.listen(port);
 console.log("App listing on port " + port);
+
+var http = require("http");
+setInterval(function() {
+    http.get("http://www.john-wu.me");
+    console.log("pinged");
+}, 300000); // ping app every 5 minutes to prevent sleeping
