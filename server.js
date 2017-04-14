@@ -33,6 +33,30 @@ require('./app/routes.js')(app);
 app.listen(port);
 console.log("App listing on port " + port);
 
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/summer-2017', function (req, res) {
+    res.sendFile(__dirname + '/public/summer-2017.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/contact', function (req, res) {
+    res.sendFile(__dirname + '/public/contact.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/experience', function (req, res) {
+    res.sendFile(__dirname + '/public/experience.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/projects', function (req, res) {
+    res.sendFile(__dirname + '/public/projects.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
+app.get('/skills', function (req, res) {
+    res.sendFile(__dirname + '/public/skills.html'); // load the single view file (angular will handle the page changes on the front-end)
+});
+
 var http = require("http");
 setInterval(function() {
     http.get("http://www.john-wu.me");
