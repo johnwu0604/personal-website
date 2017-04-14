@@ -59,6 +59,7 @@ app.get('/skills', function (req, res) {
 
 var http = require("http");
 setInterval(function() {
+    http.get("http://john-wu.me");
     http.get("http://www.john-wu.me");
     console.log("pinged");
 }, 300000); // ping app every 5 minutes to prevent sleeping
