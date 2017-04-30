@@ -313,8 +313,8 @@ module.exports = function (app) {
         var transporter = Nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'johnwudonotreply@gmail.com',
-                pass: 'asdlkj123'
+                user: 'johnwuwebsite@gmail.com',
+                pass: 'johnwu123'
             }
         });
 

@@ -1,2 +1,1 @@
-angular.module('personal-website', ['mainController', 'jobsService', 'projectsService', 'languagesService',
-    'frameworksService', 'emailService']);
+angular.module('personal-website', ['mainController','emailService']);
