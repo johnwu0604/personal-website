@@ -5,17 +5,11 @@
 // set up ======================================================================
 var express = require('express');
 var app = express();
-var mongoose = require('mongoose');
 var port  	 = process.env.PORT || 5000;
-var database = require('./config/database');
 
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
-// configuration ===============================================================
-
-mongoose.connect(database.url);
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
@@ -56,10 +50,3 @@ app.get('/projects', function (req, res) {
 app.get('/skills', function (req, res) {
     res.sendFile(__dirname + '/public/skills.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
-
-var http = require("http");
-setInterval(function() {
-    http.get("http://john-wu.me");
-    http.get("http://www.john-wu.me");
-    console.log("pinged");
-}, 300000); // ping app every 5 minutes to prevent sleeping

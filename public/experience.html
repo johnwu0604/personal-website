@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="personal-website">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,18 +36,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- SPELLS -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-    <script src="js/controllers/adminController.js"></script>
-    <script src="js/services/jobService.js"></script>
-    <script src="js/services/projectService.js"></script>
-    <script src="js/services/languageService.js"></script>
-    <script src="js/services/frameworkService.js"></script>
-    <script src="js/services/emailService.js"></script>
-    <script src="js/core.js"></script> <!-- load our main application -->
-
 </head>
-<body ng-controller="controller">
+<body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -96,18 +86,93 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="timeline">
-                    <li ng-repeat="job in jobs" ng-class-even="'timeline-inverted'">
+                    <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{ job.logo }}" alt="">
+                            <img class="img-circle img-responsive" src="https://media.glassdoor.com/sqll/21777/mxi-technologies-squarelogo-1457383288152.png" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <p class="text-muted"><em>{{ job.start }} - {{ job.end }}</em></p>
-                                <h4>{{ job.company }}</h4>
-                                <h4>{{ job.position }}</h4>
+                                <p class="text-muted"><em>May 2016 - December 2016</em></p>
+                                <h4>Mxi Technologies</h4>
+                                <h4>Software Developer Co-op</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">{{ job.description }}</p>
+                                <p class="text-muted">Worked on the Custom Software & Integrations team to implement custom patches to a core airline maintenance planning system for Southwest Airlines. Designed new REST API's using Java/SQL with JAX-RS. Developed Oracle Pub/Sub frameworks to trigger system events. Packaged software for bi-weekly releases to client - part of the iterative and incremental agile process.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAgyAAAAJDg1MjQyMGFiLTFjOTQtNDkxNy1iYmNhLWRkNjI0ZjAyNzEyOA.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="text-muted"><em>May 2015 - December 2016</em></p>
+                                <h4>DECA McGill</h4>
+                                <h4>Co-President</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">An organization which promotes professional development skills through case competitions, delegate training, and workshops. Improved the branding of the organization by designing a new logo and redeveloping the website to create a delegate portal using a Sails.js framework stack. Completely restructured the executive team to limit hierarchy and promote collaboration. Previously VP Communications.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="https://pbs.twimg.com/profile_images/697474833722945538/rYNf4NgH.jpg" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="text-muted"><em>May 2015 - May 2016</em></p>
+                                <h4>McGill Engineering Undergraduate Society</h4>
+                                <h4>U1 Computer Representative</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Represented the Year 1 Computer Engineering students at McGill University on the Engineering Undergraduate Society Council. In charge of organizing and promoting events aimed towards participation by Computer Engineers in order to establish a tighter-knit community within the Computer Engineering major students.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="http://mcgilleus.ca/sites/default/files/portfolio-image/EUSjc.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="text-muted"><em>September 2014 - May 2016</em></p>
+                                <h4>McGill Engineering Junior Council</h4>
+                                <h4>Co-President</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Student committee under the McGill Engineering Undergraduate Society aimed towards organizing events for freshmen students. Recruited, managed, and mentored an executive team of upcoming first year engineering leaders. Organized both social and academic events including McGill’s first annual engineering leadership conference with 100+ participants. Previously VP Events.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="http://i.imgur.com/Fdyfw2G.png" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="text-muted"><em>September 2014 - January 2016</em></p>
+                                <h4>Student Television at McGill</h4>
+                                <h4>Editor</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Worked on a team to produce a wide range of professional videos for McGill University. Main task was ensuring proper post production, but was involved in other video production aspects as well.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="https://static.wixstatic.com/media/7ce0ac_5bd14aea600f4e3fa6df17f0adf4d7db~mv2.jpg" alt="">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="text-muted"><em>June 2013 - June 2014</em></p>
+                                <h4>Lord Tweedsmuir Secondary School</h4>
+                                <h4>Student Body Co-President</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Voted by the school population to represent a student body of over 2,000 students by speaking at assemblies, sitting on the Parent Advisory Committee, and creating many events and activities throughout the year. Established the school’s first Inter-Clubs Council, opened a school apparel store, collected over 10,000 items for the local food bank, and raised over $5,000 for the Philippines Earthquake relief.</p>
                             </div>
                         </div>
                     </li>
