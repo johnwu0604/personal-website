@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="personal-website">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,18 +36,9 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- SPELLS -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-    <script src="js/controllers/adminController.js"></script>
-    <script src="js/services/jobService.js"></script>
-    <script src="js/services/projectService.js"></script>
-    <script src="js/services/languageService.js"></script>
-    <script src="js/services/frameworkService.js"></script>
-    <script src="js/services/emailService.js"></script>
-    <script src="js/core.js"></script> <!-- load our main application -->
 
 </head>
-<body ng-controller="controller">
+<body>
 
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -102,25 +93,95 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="project in projects">
-                <a href="#{{ project.code }}" class="portfolio-link" data-toggle="modal">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#union" class="portfolio-link" data-toggle="modal">
                     <div class="portfolio-hover">
                         <div class="portfolio-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="{{ project.photo }}" class="img-responsive" alt="">
+                    <img src="http://i.imgur.com/HzaX50e.png" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>{{ project.name }}</h4>
-                    <p class="text-muted">{{ project.time }}</p>
+                    <h4>UNI.ON</h4>
+                    <p class="text-muted">May 2016 - December 2016</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#pong" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://i.imgur.com/caj1NAN.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>AR Pong (Hack Harvard)</h4>
+                    <p class="text-muted">November 2016</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#carte" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://i.imgur.com/tJRBbeS.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>A La Carte (Hack The North)</h4>
+                    <p class="text-muted">September 2016</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#mural" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://i.imgur.com/U8i2A78.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>MTL Mural (McGill Hackathon)</h4>
+                    <p class="text-muted">January 2017</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#movr" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://i.imgur.com/IsKNmfw.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>MOVR (Concordia Hackathon)</h4>
+                    <p class="text-muted">January 2017</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#nable" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="http://i.imgur.com/6srvoAD.png" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Nable (Princeton Hackathon)</h4>
+                    <p class="text-muted">April 2017</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="portfolio-modal modal fade" ng-repeat="project in projects" id="{{ project.code }}" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="portfolio-modal modal fade" id="union" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -134,11 +195,147 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>{{ project.name }}</h2>
-                            <img class="img-responsive img-centered" src="{{ project.photo }}" alt="">
-                            <p style="text-align: left;">{{ project.description }}</p>
-                            <p style="text-align: left;"><strong>Technologies:</strong> {{ project.technologies }}</p>
-                            <p style="text-align: left;"><strong>Date:</strong> {{ project.time }}</p>
+                            <h2>UNI.ON</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/HzaX50e.png" alt="">
+                            <p style="text-align: left;">A social networking iOS application which aims to improve the nightlife experience of university students. Allows users to plan nights out with friends by browsing through a list of current events. As an alternative, users can also explore the list of events on an interactive map. By checking into the events, users can accumulate points and use them to redeem rewards at sponsored restaurants.</p>
+                            <p style="text-align: left;"><strong>Technologies:</strong> Amazon Web Services (DynamoDB, Cognito, API Gateway, Lambda), Google Maps API, Facebook API, XCode</p>
+                            <p style="text-align: left;"><strong>Date:</strong> May 2016 - December 2016</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="pong" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Augmented Reality Pong (Hack Harvard)</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/caj1NAN.png" alt="">
+                            <p style="text-align: left;">Made during the peak of the 2016 American election campaign at Hack Harvard, this web application adds an augmented reality and political twist to a classic arcade game. By using the Orion Leap Motion, users can use hand motions to move the paddles which regularly uses basic keyboard controls.</p>
+                            <p style="text-align: left;"><strong>Technologies:</strong> Orion Leap Motion, Javascript, HTML/CSS</p>
+                            <p style="text-align: left;"><strong>Date:</strong> November 2016</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="carte" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>A La Carte (Hack The North)</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/tJRBbeS.jpg" alt="">
+                            <p style="text-align: left;">Made during the peak of the 2016 American election campaign at Hack Harvard, this web application adds an augmented reality and political twist to a classic arcade game. By using the Orion Leap Motion, users can use hand motions to move the paddles which regularly uses basic keyboard controls.</p>
+                            <p style="text-align: left;"><strong>Technologies:</strong>  Yelp API, Google Directions API, Sails Framework, Javascript/HTML/CSS</p>
+                            <p style="text-align: left;"><strong>Date:</strong> September 2016</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="mural" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>MTL Mural (McGill Hackathon)</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/U8i2A78.jpg" alt="">
+                            <p style="text-align: left;">Simply open up the app, and check for beautiful murals in the vicinity.
+                            The app opens up to a map with all of the current murals present in Montreal. Find murals near you by clicking on the red tags for a preview and some interesting facts.</p>
+                            <p style="text-align: left;"><strong>Technologies:</strong>  Java, Android Studio, Montreal Open Data</p>
+                            <p style="text-align: left;"><strong>Date:</strong> September 2017</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="movr" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>MOVR Telebot (Concordia Hackathon)</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/IsKNmfw.jpg" alt="">
+                            <p style="text-align: left;">When video-calling your loved ones, MOVR lets you wander around the room via an enhanced UX design. The telebot project is a combination of an Android application and an Intel Edison-based apparatus. When connected in a video call, callers on both ends can control the robot remotely through the application. The communication between the application and the microcontroller is established on Wi-Fi. </p>
+                            <p style="text-align: left;"><strong>Technologies:</strong>  Java, Android Studio, Intel Edison, Node.js</p>
+                            <p style="text-align: left;"><strong>Date:</strong> September 2017</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="portfolio-modal modal fade" id="nable" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Nable (Princeton Hackathon)</h2>
+                            <img class="img-responsive img-centered" src="http://i.imgur.com/6srvoAD.png" alt="">
+                            <p style="text-align: left;">Nable is a React Native Application that will allow you to recover all of your small loans without the hassle or guilt of having to chasing your friends for money. The next time you lend someone money, simply type how much they owe, what they owe you for, and their phone number, and the mobile application will take care of the rest! A constant text reminder sent to your buddy's cellphone will guarantee your money back :)</p>
+                            <p style="text-align: left;"><strong>Technologies:</strong> Node.js, React Native, Express.js, Twilio API, Mongoose, CSS, HTML5</p>
+                            <p style="text-align: left;"><strong>Date:</strong> April 2017</p>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
