@@ -313,7 +313,7 @@ module.exports = function (app) {
         var transporter = Nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'johnwuwebsite@gmail.com',
+                user: 'johnwu0606@gmail.com',
                 pass: 'johnwu123'
             }
         });
